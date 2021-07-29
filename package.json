@@ -19,7 +19,6 @@
     "coverage": "jest --coverage"
   },
   "dependencies": {
-    "core-js": "^3.6.5",
     "mathjs": "^9.4.4",
     "vue": "^2.6.11",
     "vuex": "^3.6.2"
@@ -59,7 +58,7 @@
     "overrides": [
       {
         "files": [
-          "**/__tests__/*.{spec|test}.{j,t}s?(x)",
+          "**/__tests__/*.{j,t}s?(x)",
           "**/tests/unit/**/*.spec.{j,t}s?(x)"
         ],
         "env": {
