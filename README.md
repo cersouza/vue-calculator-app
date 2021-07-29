@@ -1,27 +1,36 @@
-# vue-calculator-app
+# Vue Calculator App
 
-## Project setup
-```
-yarn install
-```
+<img src="./.readme/calculator-demo.png">
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+***
 
-### Compiles and minifies for production
-```
-yarn build
-```
+## 1. About 📙
 
-### Lints and fixes files
-```
-yarn lint
+This is a simple Calculator made as personal boilerplate of project with technologies:
+- Vue.js;
+- Vuex;
+- Testing Library;
+
+## 2. Setup 💻
+
+```bash
+npm i
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## 3. Run in development mode ▶️
 
-### UTILS
+```bash
+npm run serve
+
+```
+
+## 4. Run UI tests 🧪
+
+```bash
+npm run test
+
+```
+
+## Utils
 - **Colors pallete:** https://flatuicolors.com/palette/defo;
+- **Icons:** made by [Pixel perfect](https://www.flaticon.com/authors/pixel-perfect) from [www.flaticon.com](https://www.flaticon.com/)
