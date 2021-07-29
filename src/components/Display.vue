@@ -6,7 +6,7 @@
       data-testid="input-display"
       v-model="currentInputLocal"
       @keydown.enter="calculateResultLocal"
-      placeholder="Digite a conta e depois tecle &quot;Enter&quot;"
+      placeholder="Type a count then press &quot;Enter&quot;"
     />
   </div>
 </template>
