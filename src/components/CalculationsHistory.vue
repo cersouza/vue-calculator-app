@@ -4,25 +4,25 @@
       v-if="!showHstory"
       @click="toggleShowHistory"
     >
-      Exibir histórico
+      Show history
     </button>
     <button
       v-else
       @click="toggleShowHistory"
     >
-      Ocultar histórico
+      Hide history
     </button>
     <ul v-if="showHstory" class="history-list">
       <li v-for="(calc, i) in calculationsHistoryInverse" :key="`${calc}-${i}`">
         <button
-          title="Adicionar valor"
+          title="Insert this value"
           @click="updateCurrentInputLocal(calc.expression)"
         >
           {{calc.expression}}
         </button>
         =
         <button
-          title="Adicionar valor"
+          title="Insert this value"
           @click="updateCurrentInputLocal(calc.result)"
         >
           {{calc.result}}
