@@ -5,7 +5,7 @@ import PageObjectBase from './PageObjectBase';
 export default class DisplayPageObject extends PageObjectBase {
   constructor(container) {
     super();
-    
+
     this.inputDisplay = container.queryByTestId('input-display');
   }
 

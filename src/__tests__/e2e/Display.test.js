@@ -20,24 +20,24 @@ describe('display component', () => {
   describe('nothing has been typed', () => {
     it('given nothing has been typed and Enter has been pressed on Display then should do not update currentInput', async () => {
       expect.hasAssertions();
-    
+
       const container = render(Calculator, { store });
       const { history, display } = new CalculatorPageObject(container);
-      
+
       await display.pressEnterOnInputDisplay();
-  
+
       expect(history.getHistoryContainer()).toBeNull();
       expect(updateCurrentInputMock).not.toHaveBeenCalled();
     });
-  
+
     it('given nothing has been typed and Equal Signer has been clicked then should do not update currentInput', async () => {
       expect.hasAssertions();
-    
+
       const container = render(Calculator, { store });
       const { history, keyboard } = new CalculatorPageObject(container);
-      
+
       await keyboard.clickOnEqualButton();
-  
+
       expect(history.getHistoryContainer()).toBeNull();
       expect(updateCurrentInputMock).not.toHaveBeenCalled();
     });

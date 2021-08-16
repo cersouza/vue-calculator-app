@@ -15,24 +15,24 @@ describe('calculator component', () => {
       '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.', '+', '-', '/', '*',
     ])('given button with %p label has been clicked then should show the same value on display', async (buttonLabel) => {
       expect.hasAssertions();
-  
+
       const container = render(Calculator, { store });
       const { display } = new CalculatorPageObject(container);
 
       const button = container.queryByText(buttonLabel);
 
       await fireEvent.click(button);
-  
+
       expect(display.inputDisplay).toBeVisible();
       expect(display.inputDisplay).toHaveValue(buttonLabel);
     });
 
     it('given some expression has been typed and clear button has been clicked then should show clear the text on display', async () => {
       expect.hasAssertions();
-  
+
       const container = render(Calculator, { store });
       const { display, keyboard } = new CalculatorPageObject(container);
-      
+
       await keyboard.typeRandomExpression();
       await keyboard.clickOnClearButton();
 
@@ -46,7 +46,7 @@ describe('calculator component', () => {
       const firstNumber = faker.datatype.number();
       const secondNumber = faker.datatype.number();
       const expectedResult = String(firstNumber + secondNumber);
-      
+
       const container = render(Calculator, { store });
       const { display, keyboard } = new CalculatorPageObject(container);
 
@@ -65,7 +65,7 @@ describe('calculator component', () => {
       const firstNumber = faker.datatype.number();
       const secondNumber = faker.datatype.number();
       const expectedResult = String(firstNumber - secondNumber);
-      
+
       const container = render(Calculator, { store });
       const { display, keyboard } = new CalculatorPageObject(container);
 
@@ -84,7 +84,7 @@ describe('calculator component', () => {
       const firstNumber = faker.datatype.number();
       const secondNumber = faker.datatype.number();
       const expectedResult = String(firstNumber * secondNumber);
-      
+
       const container = render(Calculator, { store });
       const { display, keyboard } = new CalculatorPageObject(container);
 
@@ -103,7 +103,7 @@ describe('calculator component', () => {
       const firstNumber = faker.datatype.number();
       const secondNumber = faker.datatype.number();
       const expectedResult = String(firstNumber / secondNumber);
-      
+
       const container = render(Calculator, { store });
       const { display, keyboard } = new CalculatorPageObject(container);
 
@@ -122,7 +122,7 @@ describe('calculator component', () => {
       const firstNumber = faker.datatype.number();
       const secondNumber = faker.datatype.number();
       const expectedResult = String(firstNumber / secondNumber);
-      
+
       const container = render(Calculator, { store });
       const { display, keyboard } = new CalculatorPageObject(container);
 
@@ -137,10 +137,10 @@ describe('calculator component', () => {
 
     it('given some expression has been typed but Equal button has not been clicked then should not show History button', async () => {
       expect.hasAssertions();
-  
+
       const container = render(Calculator, { store });
       const { history, keyboard } = new CalculatorPageObject(container);
-      
+
       await keyboard.typeRandomExpression();
 
       expect(history.getHistoryContainer()).toBeNull();
@@ -148,10 +148,10 @@ describe('calculator component', () => {
 
     it('given some expression has been calculated then this expression should show showHistoryButton', async () => {
       expect.hasAssertions();
-  
+
       const container = render(Calculator, { store });
       const { history, keyboard } = new CalculatorPageObject(container);
-      
+
       await keyboard.typeRandomExpression();
       await keyboard.clickOnEqualButton();
 
@@ -162,10 +162,10 @@ describe('calculator component', () => {
 
     it('given some expression has been calculated then this expression should show on History and show hideHistoryButton', async () => {
       expect.hasAssertions();
-  
+
       const container = render(Calculator, { store });
       const { history, keyboard } = new CalculatorPageObject(container);
-      
+
       const expression = Utils.getRandomExpression();
 
       await keyboard.type(expression);
@@ -184,10 +184,10 @@ describe('calculator component', () => {
   describe('display interaction', () => {
     it('given some expression has been calculated then this expression should show showHistoryButton', async () => {
       expect.hasAssertions();
-  
+
       const container = render(Calculator, { store });
       const { history, display } = new CalculatorPageObject(container);
-      
+
       await display.typeRandomExpressionOnInputDisplay();
       await display.pressEnterOnInputDisplay();
 
@@ -198,10 +198,10 @@ describe('calculator component', () => {
 
     it('given some expression has been calculated then this expression should show on History and show hideHistoryButton', async () => {
       expect.hasAssertions();
-  
+
       const container = render(Calculator, { store });
       const { history, display } = new CalculatorPageObject(container);
-      
+
       const expression = Utils.getRandomExpression();
 
       await display.type(expression);
@@ -220,10 +220,10 @@ describe('calculator component', () => {
   describe('history interaction', () => {
     it('given some expression has been calculated and Expression in history has been clicked then should update Display value with expression', async () => {
       expect.hasAssertions();
-  
+
       const container = render(Calculator, { store });
       const { history, display } = new CalculatorPageObject(container);
-      
+
       const expression = Utils.getRandomExpression();
 
       await display.type(expression);
@@ -241,10 +241,10 @@ describe('calculator component', () => {
 
     it('given some expression has been calculated and Result in history has been clicked then should update Display value with expression', async () => {
       expect.hasAssertions();
-  
+
       const container = render(Calculator, { store });
       const { history, display } = new CalculatorPageObject(container);
-      
+
       await display.typeRandomExpressionOnInputDisplay();
       await display.pressEnterOnInputDisplay();
       await history.clickOnShowHistoryButton();

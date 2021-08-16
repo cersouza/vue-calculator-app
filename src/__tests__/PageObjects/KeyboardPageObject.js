@@ -20,7 +20,7 @@ export default class KeyboardPageObject extends PageObjectBase {
     const charactersList = String(expression).split('');
 
     const promises = charactersList.map((character) => {
-      let button = this.container.queryByText(character);
+      const button = this.container.queryByText(character);
       return this.clickOnButtonAndWaitDomUpdate(button);
     });
 
@@ -28,7 +28,7 @@ export default class KeyboardPageObject extends PageObjectBase {
   }
 
   async typeRandomExpression(operator = '') {
-    const expression = Utils.getRandomExpression();
+    const expression = Utils.getRandomExpression(operator);
     return this.type(expression);
   }
 
