@@ -19,6 +19,6 @@ export default class DisplayPageObject extends PageObjectBase {
   }
 
   async pressEnterOnInputDisplay() {
-    await this.pressEnterOn(this.inputDisplay);
+    await PageObjectBase.pressEnterOn(this.inputDisplay);
   }
 }

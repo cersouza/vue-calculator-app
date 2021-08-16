@@ -21,7 +21,7 @@ export default class KeyboardPageObject extends PageObjectBase {
 
     const promises = charactersList.map((character) => {
       const button = this.container.queryByText(character);
-      return this.clickOnButtonAndWaitDomUpdate(button);
+      return PageObjectBase.clickOnButtonAndWaitDomUpdate(button);
     });
 
     return Promise.all(promises);
@@ -33,26 +33,26 @@ export default class KeyboardPageObject extends PageObjectBase {
   }
 
   async clickOnEqualButton() {
-    return this.clickOnButtonAndWaitDomUpdate(this.equalButton);
+    return PageObjectBase.clickOnButtonAndWaitDomUpdate(this.equalButton);
   }
 
   async clickOnClearButton() {
-    return this.clickOnButtonAndWaitDomUpdate(this.clearButton);
+    return PageObjectBase.clickOnButtonAndWaitDomUpdate(this.clearButton);
   }
 
   async clickOnSumButton() {
-    return this.clickOnButtonAndWaitDomUpdate(this.sumButton);
+    return PageObjectBase.clickOnButtonAndWaitDomUpdate(this.sumButton);
   }
 
   async clickOnSubtractButton() {
-    return this.clickOnButtonAndWaitDomUpdate(this.subtractButton);
+    return PageObjectBase.clickOnButtonAndWaitDomUpdate(this.subtractButton);
   }
 
   async clickOnMultiplyButton() {
-    return this.clickOnButtonAndWaitDomUpdate(this.multiplyButton);
+    return PageObjectBase.clickOnButtonAndWaitDomUpdate(this.multiplyButton);
   }
 
   async clickOnDivideButton() {
-    return this.clickOnButtonAndWaitDomUpdate(this.dividerButton);
+    return PageObjectBase.clickOnButtonAndWaitDomUpdate(this.dividerButton);
   }
 }
