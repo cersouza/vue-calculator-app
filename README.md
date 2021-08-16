@@ -7,7 +7,7 @@
 ## 1. About 📙
 **🌐 Link: https://vue-calculator-app.vercel.app**
 
-This is a simple Calculator made as personal boilerplate of project with technologies:
+This is a simple Calculator made as personal boilerplate of project with these technologies:
 - Vue.js;
 - Vuex;
 - Testing Library;
