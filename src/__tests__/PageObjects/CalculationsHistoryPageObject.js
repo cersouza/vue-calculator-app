@@ -12,10 +12,10 @@ export default class CalculationsHistoryPageObject extends PageObjectBase {
   }
 
   async clickOnShowHistoryButton() {
-    await this.clickOnButtonAndWaitDomUpdate(this.getShowHistoryButton());
+    await PageObjectBase.clickOnButtonAndWaitDomUpdate(this.getShowHistoryButton());
   }
 
   async clickOnHideHistoryButton() {
-    await this.clickOnButtonAndWaitDomUpdate(this.getHideHistoryButton());
+    await PageObjectBase.clickOnButtonAndWaitDomUpdate(this.getHideHistoryButton());
   }
 }

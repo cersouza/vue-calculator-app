@@ -14,45 +14,50 @@ export default class KeyboardPageObject extends PageObjectBase {
     this.dividerButton = container.queryByText('/');
     this.clearButton = container.queryByText('C');
     this.decimalDotButton = container.queryByText('.');
+    this.percentageButton = container.queryByText('%');
   }
 
   async type(expression) {
     const charactersList = String(expression).split('');
 
     const promises = charactersList.map((character) => {
-      let button = this.container.queryByText(character);
-      return this.clickOnButtonAndWaitDomUpdate(button);
+      const button = this.container.queryByText(character);
+      return PageObjectBase.clickOnButtonAndWaitDomUpdate(button);
     });
 
     return Promise.all(promises);
   }
 
   async typeRandomExpression(operator = '') {
-    const expression = Utils.getRandomExpression();
+    const expression = Utils.getRandomExpression(operator);
     return this.type(expression);
   }
 
   async clickOnEqualButton() {
-    return this.clickOnButtonAndWaitDomUpdate(this.equalButton);
+    return PageObjectBase.clickOnButtonAndWaitDomUpdate(this.equalButton);
   }
 
   async clickOnClearButton() {
-    return this.clickOnButtonAndWaitDomUpdate(this.clearButton);
+    return PageObjectBase.clickOnButtonAndWaitDomUpdate(this.clearButton);
   }
 
   async clickOnSumButton() {
-    return this.clickOnButtonAndWaitDomUpdate(this.sumButton);
+    return PageObjectBase.clickOnButtonAndWaitDomUpdate(this.sumButton);
   }
 
   async clickOnSubtractButton() {
-    return this.clickOnButtonAndWaitDomUpdate(this.subtractButton);
+    return PageObjectBase.clickOnButtonAndWaitDomUpdate(this.subtractButton);
   }
 
   async clickOnMultiplyButton() {
-    return this.clickOnButtonAndWaitDomUpdate(this.multiplyButton);
+    return PageObjectBase.clickOnButtonAndWaitDomUpdate(this.multiplyButton);
   }
 
   async clickOnDivideButton() {
-    return this.clickOnButtonAndWaitDomUpdate(this.dividerButton);
+    return PageObjectBase.clickOnButtonAndWaitDomUpdate(this.dividerButton);
+  }
+
+  async clickOnPercentageButton() {
+    return PageObjectBase.clickOnButtonAndWaitDomUpdate(this.percentageButton);
   }
 }
