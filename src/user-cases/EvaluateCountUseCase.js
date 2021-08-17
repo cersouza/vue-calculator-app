@@ -7,13 +7,13 @@ export default class EvaluateCountUseCase {
   }
 
   static prepareExpressionToEvaluate(data) {
-    let expressionPrepared = EvaluateCountUseCase.removeBlancSpaces(data);
+    let expressionPrepared = EvaluateCountUseCase.removeblankSpaces(data);
     expressionPrepared = EvaluateCountUseCase.replaceIfFirstElementIsPercent(expressionPrepared);
     expressionPrepared = EvaluateCountUseCase.replacePercentExpressions(expressionPrepared);
     return expressionPrepared;
   }
 
-  static removeBlancSpaces(data) {
+  static removeBlankSpaces(data) {
     return data.replace(/\s/g, '');
   }
 

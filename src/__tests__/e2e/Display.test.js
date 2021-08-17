@@ -80,7 +80,7 @@ describe('display component', () => {
       ['100 - 6.5%', '93.5'],
       ['100.5 - 10.5%', '89.9475'],
       ['100.5 - 0.5%', '99.9975'],
-    ])('given a %p expression with blanc spaces has been inserted and enter button has been clicked then should display the %p as result', async (expression, expectedDisplayValue) => {
+    ])('given a %p expression with blank spaces has been inserted and enter button has been clicked then should display the %p as result', async (expression, expectedDisplayValue) => {
       expect.hasAssertions();
 
       const container = render(Calculator, { store });
