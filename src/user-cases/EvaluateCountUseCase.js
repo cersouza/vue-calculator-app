@@ -13,6 +13,10 @@ export default class EvaluateCountUseCase {
     return expressionPrepared;
   }
 
+  static removeBlancSpaces(data) {
+    return data.replace(/\s/g, '');
+  }
+
   static replaceIfFirstElementIsPercent(data) {
     const firstElementIsPercent = /^(\d+\.)?\d*%/;
     return firstElementIsPercent.test(data) ? data.replace('%', '/ 100') : data;
@@ -29,9 +33,5 @@ export default class EvaluateCountUseCase {
     }
 
     return result;
-  }
-
-  static removeBlancSpaces(data) {
-    return data.replace(/\s/, '');
   }
 }
