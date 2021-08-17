@@ -14,6 +14,7 @@ export default class KeyboardPageObject extends PageObjectBase {
     this.dividerButton = container.queryByText('/');
     this.clearButton = container.queryByText('C');
     this.decimalDotButton = container.queryByText('.');
+    this.percentageButton = container.queryByText('%');
   }
 
   async type(expression) {
@@ -54,5 +55,9 @@ export default class KeyboardPageObject extends PageObjectBase {
 
   async clickOnDivideButton() {
     return PageObjectBase.clickOnButtonAndWaitDomUpdate(this.dividerButton);
+  }
+
+  async clickOnPercentageButton() {
+    return PageObjectBase.clickOnButtonAndWaitDomUpdate(this.percentageButton);
   }
 }

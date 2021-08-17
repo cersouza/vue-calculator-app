@@ -63,6 +63,12 @@
     >
       =
     </button>
+    <button
+      class="keyboard-key operator-count-key"
+      @click="addCharacterToCurrentInput({data: '%'})"
+    >
+      %
+    </button>
   </div>
 </template>
 
@@ -95,7 +101,7 @@
   }
 
   .equal-sign-key {
-    width: 15rem;
+    width: 12rem;
     border-radius: 2rem;
 
     color: #FFF;
