@@ -7,7 +7,7 @@ export default class EvaluateCountUseCase {
   }
 
   static prepareExpressionToEvaluate(data) {
-    let expressionPrepared = EvaluateCountUseCase.removeblankSpaces(data);
+    let expressionPrepared = EvaluateCountUseCase.removeBlankSpaces(data);
     expressionPrepared = EvaluateCountUseCase.replaceIfFirstElementIsPercent(expressionPrepared);
     expressionPrepared = EvaluateCountUseCase.replacePercentExpressions(expressionPrepared);
     return expressionPrepared;
