@@ -42,4 +42,54 @@ describe('display component', () => {
       expect(updateCurrentInputMock).not.toHaveBeenCalled();
     });
   });
+
+  describe('percentage operator', () => {
+    it.each([
+      ['100+1%', '101'],
+      ['50-50%', '25'],
+      ['23/100%', '1'],
+      ['20*10%', '40'],
+      ['35+%', '35'],
+      ['35-%', '35'],
+      ['35*%', '0'],
+      ['10%-100', '-99.9'],
+      ['100-6.5%', '93.5'],
+      ['100.5-10.5%', '89.9475'],
+      ['100.5-0.5%', '99.9975'],
+    ])('given a %p expression has been inserted with percentage and equal buttons has been clicked then should display the %p as result', async (expression, expectedDisplayValue) => {
+      expect.hasAssertions();
+
+      const container = render(Calculator, { store });
+      const { display } = new CalculatorPageObject(container);
+
+      await display.type(expression);
+      await display.pressEnterOnInputDisplay();
+
+      expect(display.inputDisplay).toHaveValue(expectedDisplayValue);
+    });
+
+    it.each([
+      ['100 + 10', '110'],
+      ['50 - 25', '25'],
+      ['23 / 100', '0.23'],
+      ['20 * 10', '200'],
+      ['35 + %', '35'],
+      ['35 - %', '35'],
+      ['35 * %', '0'],
+      ['10% - 100', '-99.9'],
+      ['100 - 6.5%', '93.5'],
+      ['100.5 - 10.5%', '89.9475'],
+      ['100.5 - 0.5%', '99.9975'],
+    ])('given a %p expression with blanc spaces has been inserted and enter button has been clicked then should display the %p as result', async (expression, expectedDisplayValue) => {
+      expect.hasAssertions();
+
+      const container = render(Calculator, { store });
+      const { display } = new CalculatorPageObject(container);
+
+      await display.type(expression);
+      await display.pressEnterOnInputDisplay();
+
+      expect(display.inputDisplay).toHaveValue(expectedDisplayValue);
+    });
+  });
 });
