@@ -7,10 +7,14 @@ export default class EvaluateCountUseCase {
   }
 
   static prepareExpressionToEvaluate(data) {
-    let expressionPrepared = EvaluateCountUseCase.removeBlancSpaces(data);
+    let expressionPrepared = EvaluateCountUseCase.removeBlankSpaces(data);
     expressionPrepared = EvaluateCountUseCase.replaceIfFirstElementIsPercent(expressionPrepared);
     expressionPrepared = EvaluateCountUseCase.replacePercentExpressions(expressionPrepared);
     return expressionPrepared;
+  }
+
+  static removeBlankSpaces(data) {
+    return data.replace(/\s/g, '');
   }
 
   static replaceIfFirstElementIsPercent(data) {
@@ -29,9 +33,5 @@ export default class EvaluateCountUseCase {
     }
 
     return result;
-  }
-
-  static removeBlancSpaces(data) {
-    return data.replace(/\s/, '');
   }
 }
