@@ -16,7 +16,8 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "test": "jest",
-    "coverage": "jest --coverage"
+    "coverage": "jest --coverage",
+    "test-features": "cucumber-js"
   },
   "dependencies": {
     "mathjs": "^9.4.4",
@@ -39,6 +40,7 @@
     "eslint-plugin-vue": "^7.14.0",
     "faker": "^5.5.3",
     "jest": "^27.0.6",
+    "jest-cucumber": "^3.0.1",
     "vue-jest": "^3.0.7",
     "vue-template-compiler": "^2.6.11"
   },

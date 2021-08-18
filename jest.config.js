@@ -1,7 +1,7 @@
 module.exports = {
   testEnvironment: 'jsdom',
   roots: [
-    '<rootDir>/src/__tests__/e2e',
+    '<rootDir>/src/__tests__',
   ],
   setupFilesAfterEnv: [
     '@testing-library/jest-dom',
@@ -17,4 +17,8 @@ module.exports = {
     '^.+\\.js$': '<rootDir>/node_modules/babel-jest',
     '.*\\.(vue)$': '<rootDir>/node_modules/vue-jest',
   },
+  testMatch: [
+    '**/*.test.js',
+    '**/*.feature.js',
+  ],
 };
